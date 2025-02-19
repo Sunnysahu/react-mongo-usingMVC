@@ -3,8 +3,6 @@ import cors from "cors";
 
 import connectDB from "./DBConnect.js";
 
-import postRout from "./routes/postRoutes.js";
-
 import dotenv from "dotenv";
 import postRoute from "./routes/postRoutes.js";
 dotenv.config();

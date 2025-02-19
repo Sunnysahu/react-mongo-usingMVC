@@ -51,4 +51,6 @@ postRoute.post(
   postController.createpost
 );
 
+postRoute.get("/getpost", postController.getpost);
+
 export default postRoute;

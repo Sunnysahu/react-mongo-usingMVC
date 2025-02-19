@@ -15,8 +15,6 @@ const createpost = async (req, res, next) => {
       msg: "Post Data",
       data: postData,
     });
-
-    res.s;
   } catch (error) {
     console.error("Error at Post Controller", error.message);
     res.status(400).send({
@@ -26,4 +24,21 @@ const createpost = async (req, res, next) => {
   }
 };
 
-export default { createpost };
+const getpost = async (req, res) => {
+  try {
+    const post = await postModel.find({});
+    res.status(200).send({
+      success: true,
+      msg: "Get Data",
+      data: post,
+    });
+  } catch (error) {
+    console.error("Error at get Post Controller", error.message);
+    res.status(400).send({
+      success: false,
+      msg: error.message,
+    });
+  }
+};
+
+export default { createpost, getpost };
